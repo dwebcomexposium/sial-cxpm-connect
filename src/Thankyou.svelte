@@ -4,7 +4,7 @@
       <label
         class="text-green-600 text-center block text-sm font-bold mb-2"
         for="email">
-        Thank you.
+        Thank you
         <br />
         Your password has been successfully reset
       </label>
