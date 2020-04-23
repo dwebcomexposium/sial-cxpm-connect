@@ -1,5 +1,5 @@
 <script>
- const svg = "/images/logo-sial.svg"
+ const svg = "/images/logo-sial.svg";
 </script>
 
 <nav class="flex items-center justify-center bg-yellow-400 flex-wrap p-6 border-b-2 border-solid border-grey">
