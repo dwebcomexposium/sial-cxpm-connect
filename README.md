@@ -1,4 +1,4 @@
-# svelte-tailwindcss-template
+# svelte-tailwindcss-SIAL-regenerate-password-template
 
 This is a fork of Svelte's project template to enable usage of Tailwindcss. Refer to https://github.com/sveltejs/template for more info.
 
