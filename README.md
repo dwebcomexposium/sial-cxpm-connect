@@ -7,7 +7,7 @@ _Note that you will need to have [Node.js](https://nodejs.org) installed._
 Install the dependencies...
 
 ```bash
-cd svelte-app
+cd sial-cxpm-connect
 npm install
 ```
 
