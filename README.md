@@ -1,14 +1,5 @@
 # svelte-tailwindcss-SIAL-regenerate-password-template
 
-This is a fork of Svelte's project template to enable usage of Tailwindcss. Refer to https://github.com/sveltejs/template for more info.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sarioglu/svelte-tailwindcss-template svelte-app
-cd svelte-app
-```
-
 _Note that you will need to have [Node.js](https://nodejs.org) installed._
 
 ## Get started
