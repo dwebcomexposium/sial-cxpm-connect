@@ -7,6 +7,8 @@
         Thank you
         <br />
         Your password has been successfully reset
+        <br />
+        You can now close this window
       </label>
     </div>
   </div>
