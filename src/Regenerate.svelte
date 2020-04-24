@@ -68,8 +68,6 @@
       "https://api.comexposium-sso.com/_plugin/Comexposium/user/regeneratePassword",
       requestOptions
     )
-      .then(response => response.text())
-      .then(result => console.log(result))
       .then(result => (success = true))
       .catch(error => console.log("error", error));
   }
