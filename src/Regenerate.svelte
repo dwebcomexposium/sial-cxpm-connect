@@ -4,6 +4,20 @@
 
   let success = false;
 
+  const disabledButtonCss = "opacity-50 cursor-not-allowed";
+
+  let disabledButton = true;
+
+  function buttonhandler () {
+    const inputPassword = document.getElementById('password');
+    const inputPassword2 = document.getElementById('password2');
+    if (inputPassword.value.length !== 0 || inputPassword2.value.length !== 0) {
+      disabledButton = false;
+    } else {
+      disabledButton = true;
+    }
+  }
+
   function ToggleType() {
     var x = document.getElementById("password");
     if (x.type === "password") {
@@ -101,6 +115,7 @@
             Password
           </label>
           <input
+            on:keyup={buttonhandler}
             use:inputF1
             bind:value={$valueF1}
             class="shadow appearance-none border rounded w-full py-2 px-3
@@ -172,6 +187,7 @@
             Confirm you password
           </label>
           <input
+            on:keyup={buttonhandler}
             use:inputF2
             bind:value={$valueF2}
             class="shadow appearance-none border rounded w-full py-2 px-3
@@ -198,8 +214,9 @@
         </div>
         <div class="flex items-center justify-center">
           <button
+            disabled={disabledButton}
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4
-            rounded focus:outline-none focus:shadow-outline"
+            rounded focus:outline-none focus:shadow-outline {disabledButton ? disabledButtonCss : ''}"
             type="submit">
             Regenerate your password
           </button>
