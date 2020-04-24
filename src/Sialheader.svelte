@@ -11,4 +11,4 @@
   </div>
 </nav>
 
-<h1 class="text-4xl text-gray-700 text-center my-20 tracking-tight">Regenerate your password</h1>
+<h1 class="text-4xl text-gray-700 text-center my-10 tracking-tight">Regenerate your password</h1>
