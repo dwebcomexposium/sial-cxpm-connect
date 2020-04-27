@@ -129,7 +129,7 @@
               text-sm leading-5">
               {#if hideEye}
                 <svg
-                  class="h-6 text-gray-700"
+                  class="h-6 text-gray-700 cursor-pointer"
                   on:click={toggleEye}
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@
               {/if}
               {#if !hideEye}
                 <svg
-                  class="h-6 text-gray-700"
+                  class="h-6 text-gray-700 cursor-pointer"
                   on:click={toggleEye}
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
