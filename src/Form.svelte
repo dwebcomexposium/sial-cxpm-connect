@@ -182,7 +182,7 @@
           </button>
         </div>
       </form>
-      <p class="text-center text-gray-500 text-xs">
+      <p class="text-center font-thin text-gray-700 text-xs">
         You will receive an email to regenerate your password
       </p>
     </div>
