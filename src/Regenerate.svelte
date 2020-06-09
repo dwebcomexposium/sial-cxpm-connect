@@ -3,6 +3,8 @@
   import Thankyou from "./Thankyou.svelte";
 
   let success = false;
+  let emailReceived;
+  let jsonData;
 
   const disabledButtonCss = "opacity-50 cursor-not-allowed";
 
@@ -60,12 +62,35 @@
   });
 
   const onSuccess = values => {
-    handleClickPassword();
+    updatePasswordAndLog();
   };
+
+  async function updatePasswordAndLog() {
+    return Promise.all([await handleClickPassword(), await logIt()]);
+  }
 
   export let token;
 
-  function handleClickPassword() {
+  async function logIt() {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    let raw2 = JSON.stringify({ username: emailReceived, password: $valueF2 });
+
+    const requestOptions2 = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw2,
+      redirect: "follow"
+    };
+
+    await fetch(
+      "https://api.comexposium-sso.com/_login/local?expiresIn=12h",
+      requestOptions2
+    ).catch(error => console.log("error", error));
+  }
+
+  async function handleClickPassword() {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -78,7 +103,7 @@
       redirect: "follow"
     };
 
-    fetch(
+    await fetch(
       "https://api.comexposium-sso.com/_plugin/Comexposium/user/regeneratePassword",
       requestOptions
     )
