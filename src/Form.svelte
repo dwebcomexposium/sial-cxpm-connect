@@ -4,6 +4,7 @@
   import Sentmessage from "./Sentmessage.svelte";
   import Sialheader from "./Sialheader.svelte";
   import Regenerate from "./Regenerate.svelte";
+  import FirstLogin from "./FirstLogin.svelte";
 
   const [validity, validate] = createFieldValidator(
     requiredValidator(),
@@ -14,6 +15,7 @@
   let token = null;
   let hideIt = false;
   let isToken = false;
+  let isTokenFirstLogin = false;
   const disabledButtonCss = "opacity-50 cursor-not-allowed";
 
   function handleClick() {
@@ -114,15 +116,24 @@
     return obj;
   }
 
-  if (getAllUrlParams(window.location.href).hasOwnProperty("token")) {
+  if (getAllUrlParams(window.location.href).hasOwnProperty("token") && window.location.href.indexOf("first-login") === -1) {
     token = getAllUrlParams(window.location.href).token;
     isToken = true;
+  }
+
+  if (getAllUrlParams(window.location.href).hasOwnProperty("token") && window.location.href.indexOf("first-login") > -1) {
+    token = getAllUrlParams(window.location.href).token;
+    isTokenFirstLogin = true;
   }
 </script>
 
 <Sialheader />
 
-{#if isToken}
+{#if isTokenFirstLogin}
+  <FirstLogin {token} />
+{/if}
+
+{#if isToken && !isTokenFirstLogin}
   <Regenerate {token} />
 {/if}
 
@@ -130,7 +141,7 @@
   <Sentmessage {email} />
 {/if}
 
-{#if !hideIt && !isToken}
+{#if !hideIt && !isToken && !isTokenFirstLogin}
   <div class="flex items-center justify-center">
     <div class="w-full max-w-xs">
       <form class="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
