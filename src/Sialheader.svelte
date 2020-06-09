@@ -40,6 +40,6 @@
   </h1>
 {:else}
   <h1 class="text-4xl text-gray-700 text-center my-10 tracking-tight">
-    Manage your password
+    Reset your password
   </h1>
 {/if}
