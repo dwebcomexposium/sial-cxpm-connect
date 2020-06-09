@@ -88,8 +88,21 @@
       "https://api.comexposium-sso.com/_login/local?expiresIn=12h",
       requestOptions2
     )
-    //.then(window.location.href = "https://www.sialparis.com")
-    .catch(error => console.log("error", error));
+      //.then((window.location.href = "https://www.sialparis.fr"))
+      .then(
+        comexposiumConnect.loginUser(emailReceived, $valueF2, false, function(
+          result
+        ) {
+          if (result.statusCode === 0) {
+            // login successful
+            console.log("logged");
+          } else {
+            // login failed
+            console.log(result.statusCode, result.message);
+          }
+        })
+      )
+      .catch(error => console.log("error", error));
   }
 
   async function handleClickPassword() {
@@ -123,7 +136,6 @@
           (jsonData = result.json()),
           jsonData.then(function(data) {
             emailReceived = data.result.data.email;
-            console.log(emailReceived);
           })
         )
       )

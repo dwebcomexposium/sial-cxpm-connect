@@ -8,34 +8,43 @@
         <br />
         Your password has been successfully reset
         <br />
-        You can now close this window
+        You can now close this window or visit your area:
       </label>
     </div>
     <div class="items-stretch flex">
       <a href="https://event.sialparis.com/2020/en/" target="_blank">
-      <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4
-        rounded focus:outline-none focus:shadow-outline m-2 flex-1"
-        type="submit">
-        Exihitor's aera
-      </button>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4
+          rounded focus:outline-none focus:shadow-outline m-2 flex-1"
+          type="submit">
+          Exihitor's aera
+        </button>
       </a>
       <a href="https://badge.sialparis.fr/en/home.htm" target="_blank">
-      <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4
-        rounded focus:outline-none focus:shadow-outline m-2 flex-1"
-        type="submit">
-        Visitor's aera
-      </button>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4
+          rounded focus:outline-none focus:shadow-outline m-2 flex-1"
+          type="submit">
+          Visitor's aera
+        </button>
       </a>
-       <a href="https://www.sialparis.com" target="_blank">
-      <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4
-        rounded focus:outline-none focus:shadow-outline m-2 flex-1"
-        type="submit">
-        Sial Paris website
-      </button>
+      <a href="https://www.sialparis.com" target="_blank">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4
+          rounded focus:outline-none focus:shadow-outline m-2 flex-1"
+          type="submit">
+          Sial Paris website
+        </button>
       </a>
     </div>
   </div>
+</div>
+
+<div
+  id="cxpmClientAccountWidget"
+  data-salon="saloon"
+  data-sessionSalon="saloon_2020"
+  data-application="2a6d06fc8089bbff0889aadc02d4a14ac1bdd03a"
+  data-language="eng-GB">
+  <!-- Nothing here -->
 </div>
