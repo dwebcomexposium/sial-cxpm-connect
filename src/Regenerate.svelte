@@ -87,7 +87,22 @@
     await fetch(
       "https://api.comexposium-sso.com/_login/local?expiresIn=12h",
       requestOptions2
-    ).catch(error => console.log("error", error));
+    )
+    //.then((window.location.href = "https://www.sialparis.fr"))
+    .then(
+        comexposiumConnect.loginUser(emailReceived, $valueF2, false, function(
+          result
+        ) {
+          if (result.statusCode === 0) {
+            // login successful
+            console.log("logged");
+          } else {
+            // login failed
+            console.log(result.statusCode, result.message);
+          }
+        })
+      )
+    .catch(error => console.log("error", error));
   }
 
   async function handleClickPassword() {
@@ -107,7 +122,16 @@
       "https://api.comexposium-sso.com/_plugin/Comexposium/user/regeneratePassword",
       requestOptions
     )
-      .then(result => (success = true))
+      .then(
+        result => (
+          (success = true),
+          (jsonData = result.json()),
+          jsonData.then(function(data) {
+            emailReceived = data.result.data.email;
+            console.log(emailReceived)
+          })
+        )
+      )
       .catch(error => console.log("error", error));
   }
 </script>
