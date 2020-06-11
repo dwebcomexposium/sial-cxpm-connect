@@ -1,3 +1,7 @@
+<svelte:head>
+	<script defer src="https://connect.prod.comexposium-webservices.com/js/loader.min.js"></script>
+</svelte:head>
+
 <script>
   import createSvelidation from "svelidation";
   import Thankyou from "./Thankyou.svelte";
